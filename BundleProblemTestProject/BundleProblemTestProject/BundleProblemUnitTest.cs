@@ -2,7 +2,12 @@ using Xunit;
 
 namespace BundleProblemTestProject
 {
-  public record struct Bundle(string Name, int UnitsNeeded, List<Bundle> Parts);
+  public class Bundle
+  {
+    public string Name { get; set; }
+    public int UnitsNeeded { get; set; }
+    public List<Bundle> Parts { get; set; } = new();
+  }
 
   public class BundleProblemUnitTest
   {
