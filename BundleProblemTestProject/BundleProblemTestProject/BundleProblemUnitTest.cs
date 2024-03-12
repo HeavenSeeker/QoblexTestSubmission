@@ -1,13 +1,9 @@
+using BundleProblem;
 using Xunit;
 
 namespace BundleProblemTestProject
 {
-  public class Bundle
-  {
-    public string Name { get; set; }
-    public int UnitsNeeded { get; set; }
-    public List<Bundle> Parts { get; set; } = new();
-  }
+  
 
   public class BundleProblemUnitTest
   {
@@ -64,7 +60,7 @@ namespace BundleProblemTestProject
       }, new Dictionary<string, int> () { ["Seats"] = 100, ["Doors"] = 20, ["Screws"] = 40, ["Cylinder"] = 20 }, 2
       }
     };
-
+    
     [Theory]
     [MemberData(nameof(TestData))]
     public void SolutionTest(Bundle bundle, Dictionary<string, int> stock, int answer)
